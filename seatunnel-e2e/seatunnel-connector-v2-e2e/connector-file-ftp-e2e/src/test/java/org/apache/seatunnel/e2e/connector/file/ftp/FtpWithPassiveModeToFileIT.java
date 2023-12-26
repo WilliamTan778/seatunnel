@@ -76,9 +76,6 @@ public class FtpWithPassiveModeToFileIT extends TestSuiteBase implements TestRes
                         .withEnv("FTP_USER", USERNAME)
                         .withEnv("FTP_PASS", PASSWORD)
                         .withEnv("PASV_ADDRESS", "0.0.0.0")
-                        .withEnv("PASV_ENABLE", "YES")
-                        .withEnv("PASV_MIN_PORT", "21110")
-                        .withEnv("PASV_MAX_PORT", "21115")
                         .withLogConsumer(new Slf4jLogConsumer(log))
                         .withPrivilegedMode(true);
 
