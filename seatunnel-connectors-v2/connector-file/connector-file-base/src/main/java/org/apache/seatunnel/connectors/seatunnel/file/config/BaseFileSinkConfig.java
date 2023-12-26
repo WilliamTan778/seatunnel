@@ -72,7 +72,8 @@ public class BaseFileSinkConfig implements DelimiterConfig, Serializable {
         }
         checkNotNull(path);
 
-        if (path.equals(File.separator)) {
+        // remove the last separator, if the path is root path, checkpoint targetPath will be "//" , targetPath.getParent is null
+        if(path.equals(File.separator)){
             this.path = "";
         }
 
